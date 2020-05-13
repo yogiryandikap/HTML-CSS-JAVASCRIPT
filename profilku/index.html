@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <link rel="stylesheet" href="../profilku/asset/css/syle.css">
+</head>
+<body>
+    
+    <!-- NavBar -->
+
+    <nav>
+        <div class="menu-mobile">
+            <a href="#" onclick="showMenu()">Menu</a>
+        </div>
+        <ul id="menu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">MY INVENTORY</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="box-profile"> 
+        <div class="img-profile">
+            <div class="photo"></div>
+        </div>
+        <div class="description">
+            <h1 id="pName">Yogi Ryandika Prasetya</h1>
+            <p id="pRole">Front End Developer</p>
+            <a href="#input-form" class="button bg-green" onclick="editForm()">Edit</a>
+            <a href="#" class="button border-blue">Resume</a>
+        </div>
+        <div class="information">
+            <div class="data">    
+                <p class="field">Availability</p>
+                <p id="pAvailability" class="text-gray">Full Time</p>
+            </div>
+            
+            <div class="data">
+                <p class="field">Age</p>
+                <p id="pAge" class="text-gray">20</p>
+            </div>
+            <div class="data">
+                <p class="field">Location</p>
+                <p id="pLocation" class="text-gray">Jawa Tengah, Indonesia</p>
+            </div>
+            <div class="data">
+                <p class="field">Years Experience</p>
+                <p id="pExperience" class="text-gray">1</p>
+            </div>
+            <div class="data">
+                <p class="field">Email</p>
+                <p id="pEmail" class="text-gray">YogiryandikaP45@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="input-form">
+        <!-- <form action="#" method="#"> -->
+            <div class="form">
+                <label>Name</label>
+                <input type="text" name="name" id="inpName">
+            </div>
+            <div class="form">
+                <label>Role</label>
+                <input type="text" name="role" id="inpRole">
+            </div>
+            <div class="form">
+                <label>Availability</label>
+                <input type="text" name="availability" id="inpAvailability">
+            </div>
+            <div class="form">
+                <label>Age</label>
+                <input type="number" name="age" id="inpAge">
+            </div>
+            <div class="form">
+                <label>Location</label>
+                <input type="text" name="loc" id="inpLocation">
+            </div>
+            <div class="form">
+                <label>Years Experience</label>
+                <input type="number" name="years" id="inpExperience">
+            </div>
+            <div class="form">
+                <label>Email</label>
+                <input type="email" name="email" id="inpEmail">
+            </div>
+            <div class="form">
+                <input type="submit" name="submit" value="SUBMIT" onclick="simpanform()" class="bg-blue">
+            </div>
+        <!-- </form> -->
+    </section>
+
+    <script>
+        var forMenu = document.getElementById("input-form");
+        forMenu.style.display = "none";
+        
+        function editForm(){
+            if(forMenu.style.display === "none"){
+                forMenu.style.display = "block";
+            }else{
+                forMenu.style.display = "none";
+            }
+       
+
+        var name = document.getElementById("pName").innerHTML;
+        var role = document.getElementById("pRole").innerHTML;
+        var availability = document.getElementById("pAvailability").innerHTML;
+        var age = document.getElementById("pAge").innerHTML;
+        var loc = document.getElementById("pLocation").innerHTML;
+        var years = document.getElementById("pExperience").innerHTML;
+        var email = document.getElementById("pEmail").innerHTML;
+
+        document.getElementById("inpName").value = name;        
+        document.getElementById("inpRole").value = role;
+        document.getElementById("inpAvailability").value = availability;
+        document.getElementById("inpAge").value = age;
+        document.getElementById("inpLocation").value = loc;
+        document.getElementById("inpExperience").value = years;
+        document.getElementById("inpEmail").value = email;
+        }
+
+        
+        function simpanform() {
+            forMenu.style.display = "none";
+            var name = document.getElementById("inpName").value;
+            var role = document.getElementById("inpRole").value;
+            var availability = document.getElementById("inpAvailability").value;
+            var age = document.getElementById("inpAge").value;
+            var loc = document.getElementById("inpLocation").value;
+            var years = document.getElementById("inpExperience").value;
+            var email = document.getElementById("inpEmail").value;
+                        
+            document.getElementById("pName").innerHTML = name;
+            document.getElementById("pRole").innerHTML = role;
+            document.getElementById("pAvailability").innerHTML = availability;
+            document.getElementById("pAge").innerHTML = age;
+            document.getElementById("pLocation").innerHTML = loc;
+            document.getElementById("pExperience").innerHTML = years;
+            document.getElementById("pEmail").innerHTML = email;
+        }
+
+        function showMenu(){
+            var menu = document.getElementById("menu");
+            var box = document.getElementById("box-profile");
+
+            if(menu.style.display === "block"){
+                menu.style.display = "none";
+                box.style.paddingTop = "none";
+            }else{
+                menu.style.display = "block";
+                box.style.paddingTop = "125px";
+            }            
+        }
+
+        
+    </script>
+   
+</body>
+</html>
